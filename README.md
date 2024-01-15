@@ -17,7 +17,7 @@ The bulk of the setup if found in $\mathtt{motionnbodconfine}$ which takes in al
 #### Simulate
 To simulate over time the evolution of a collection of interacting magnetocapillary disks, the script $\mathtt{mainmermaidcodeconfinement}$ is used. Here, the code is written to allow for batches of results to be gathered at once. The user can provide a vector different amount of disks to simulate (which corresponds to a packing fraction) with the number of simulations indicating the number of times to run a specific number of disks. The code provided has an example set of experimental parameters which were used for the results displayed in Figure 3. The code outputs '.mat' files which are named after the number of disks simulated. 
 #### Visualize
-To visualize the final configurations which are outputted after running the built-in ODE solver, $\mathtt{end_config_plots_confine}$ is used. Here, the final configuration is shown with options to directly save the Matlab figures whilst running the script in a variety of formats.
+To visualize the final configurations which are outputted after running the built-in ODE solver, $\mathtt{endconfigplotsconfine}$ is used. Here, the final configuration is shown with options to directly save the Matlab figures whilst running the script in a variety of formats.
 ### Periodic Code
 In many ways, the periodic code follows naturally from the confinement code above. Where different, additional notes and caveats are mentioned below.
 #### Setup
@@ -25,7 +25,7 @@ For the periodic domain, a square is used leading to a slight adjustment in our 
 
 For the periodic domain, we initialize $n$ particles inside the $L$ x $L$ domain. At each time step, we place an replica square to the left, right, above, below, and on all four of the diagonals and compute the forces on the original $N$ particles. As such, an individual particle is receiving forces from $9N-1$ particles. A schematic of the computational domain is shown below.
 
-<img width="697" alt="PeriodicDomain" src="https://github.com/harrislab-brown/MermaidCereal/assets/156462397/6aa880f7-8cc1-49ee-9a49-bbdd62f844d0">
+<img width="400" alt="PeriodicDomain" src="https://github.com/harrislab-brown/MermaidCereal/assets/156462397/6aa880f7-8cc1-49ee-9a49-bbdd62f844d0">
 
 #### Simulate
 For our set of parameters and range at which the magnetocapillary forces persist, the size of the periodic domain and number of grids $(3x3)$ was sufficient to act as periodic boundary conditions.
