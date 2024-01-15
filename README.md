@@ -7,5 +7,12 @@ This code complements the article "Mermaid Cereal: Interactions and Pattern Form
 Sample final configurations for various packing fractions are available to highlight the pattern formation which occurs due to the interaction potential having competing attractive (capillary) and repulsive (magnetic) effects.
 
 ## Setup and Usage
-
-## Model Details
+For this project, we focused on simulating magnetocapillary interactions in both confined and periodic geometries. For each of the scenarios, 2 Matlab functions and 2 Matlab scripts are provided to set up, simulate, and visualize the pattern formation which arise as a function of system parameters, packing fraction, and boundary geometry.
+### Confinement Code
+#### Setup
+#### Simulate
+#### Visualize
+### Periodic Code
+#### Setup
+#### Simulate
+#### Visualize
