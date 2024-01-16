@@ -6,7 +6,7 @@ This code complements the article "Mermaid Cereal: Interactions and Pattern Form
 
 Sample final configurations for various packing fractions are available as '.mat' files to highlight the pattern formation which occurs due to the interaction potential having competing attractive (capillary) and repulsive (magnetic) effects. To visualize these provided final configurations, withoutout generating them via the scripts below, you can simply run either $\mathtt{endconfigplotsconfine}$ or $\mathtt{endconfigplotssquare}$ in the folders containing the $'.mat'$ files for confined and periodic domains respectively.
 
-While not used for any work within the paper, a complimentary version of the governing \textit{dimensionless} set of equations is presented written in Python in the form of a jupyter notebook.
+While not used for any work within the paper, a complimentary version of the governing $\textit{dimensionless}$ set of equations is presented written in Python in the form of a jupyter notebook.
 
 ## Setup and Usage
 For this project, we focused on simulating magnetocapillary interactions in both confined and periodic geometries. For each of the scenarios, 2 Matlab functions and 2 Matlab scripts are provided to set up, simulate, and visualize the pattern formation which arise as a function of system parameters, packing fraction, and boundary geometry.
