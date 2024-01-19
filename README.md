@@ -10,7 +10,7 @@ While not used for any work within the paper, a complimentary version of the gov
 
 ## Setup and Usage
 For this project, we focused on simulating magnetocapillary interactions in both confined and periodic geometries. For each of the scenarios, 2 Matlab functions and 2 Matlab scripts are provided to set up, simulate, and visualize the pattern formation which arise as a function of system parameters, packing fraction, and boundary geometry.
-### Confinement Code
+### Confinement Code (Matlab)
 The following description outlines simulating magnetocapillary interactions when confined in a circular geometry.
 #### Setup
 The setup necessary for the confinement code is found in $\mathtt{initcondmaker}$ and $\mathtt{motionnbodconfine}$. When initializing our set of ODEs to evolve, we need to provide $2n$ initial positions ($x$ and $y$ components for each of the $n$ disks). $\mathtt{initcondmaker}$ is an algorithm which randomly chooses initial positions from a circle of radius $R$ for $n$ disks of radius $a$. The positions are chosen sequentially with the position of the next disk chosen randomly with the additional constraint that it cannot overlap with an already placed disk (redraws occurs in an overlapping instance). This is to ensure that the simulation is realistic to experiment where the disks cannot overlap. As the packing fraction / number of disks increases, this step in running the simulation acts as the bottleneck given that it becomes increasingly challenging to place the next disk as less and less space is available to be placed in.
@@ -20,7 +20,7 @@ The bulk of the setup if found in $\mathtt{motionnbodconfine}$ which takes in al
 To simulate over time the evolution of a collection of interacting magnetocapillary disks, the script $\mathtt{mainmermaidcodeconfinement}$ is used. Here, the code is written to allow for batches of results to be gathered at once. The user can provide a vector of different amounts of disks to simulate (which corresponds to a packing fraction) with the number of simulations indicating the number of times to run a specific number of disks. The code provided has an example set of experimental parameters which were used for the results displayed in Figure 3. The code outputs '.mat' files which are named after the number of disks simulated. 
 #### Visualize
 To visualize the final configurations which are outputted after running the built-in ODE solver, $\mathtt{endconfigplotsconfine}$ is used. Here, the final configuration is shown with options to directly save the Matlab figures whilst running the script in a variety of formats.
-### Periodic Code
+### Periodic Code (Matlab)
 In many ways, the periodic code follows naturally from the confinement code above. Where different, additional notes and caveats are mentioned below.
 #### Setup
 For the periodic domain, a square is used leading to a slight adjustment in our initial position algorithm. $\mathtt{initcondmakersquare}$ is an algorithm which randomly chooses initial positions from a square of size $L$ for $n$ disks of radius $a$. We chose a formidbably larger square for the purpose of our simulations to best visualize the patterns which form.
@@ -34,5 +34,5 @@ For our set of parameters and range at which the magnetocapillary forces persist
 #### Visualize
 Here, we choose to simply visualize the center block, from the 3x3 grid, demonstrating the final configuration in periodic domains.
 
-### Python Dimensionless Code
+### Simple Dimensionless Code (Python)
 We wanted to provide an alternative set of code that is more readily accessible than Matlab which led to the development of a jupyter notebook containing the simulations of the same problem. The code is written in an analogous format to the Matlab code with the caveat that it was written as a set of second-order ODEs (incorporating inertia) which generate identical results to the overdamped limit as mentioned in the accompanying paper. 
